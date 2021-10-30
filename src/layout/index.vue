@@ -1,8 +1,14 @@
 <template>
-  <div class="layout">
-    layout
-    <router-view></router-view>
-  </div>
+  <el-container>
+    <el-aside width="200px">Aside</el-aside>
+    <el-container>
+      <el-header>Header</el-header>
+      <el-main>
+        Main
+        <router-view></router-view>
+      </el-main>
+    </el-container>
+  </el-container>
 </template>
 
 <script lang="ts">
@@ -11,3 +17,10 @@ export default Vue.extend({
   name: 'LayoutIndex',
 })
 </script>
+
+<style lang="scss" scoped>
+.el-container {
+  min-height: 100vh;
+  min-width: 980px;
+}
+</style>

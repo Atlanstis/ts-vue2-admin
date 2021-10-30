@@ -1,24 +1,6 @@
 # ts-vue2-admin
 
-## Project setup
-```
-yarn install
-```
+## 组件库-Element
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+> [Element - 网站快速成型工具](https://element.eleme.cn/#/zh-CN)
 
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
