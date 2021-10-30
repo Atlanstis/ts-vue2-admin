@@ -14,6 +14,9 @@ import {
   DropdownItem,
   DropdownMenu,
   Avatar,
+  Form,
+  FormItem,
+  Input,
 } from 'element-ui'
 
 Vue.use(Button)
@@ -30,3 +33,6 @@ Vue.use(Button)
   .use(DropdownItem)
   .use(DropdownMenu)
   .use(Avatar)
+  .use(Form)
+  .use(FormItem)
+  .use(Input)
