@@ -11,4 +11,20 @@ module.exports = {
       },
     },
   },
+  /**
+   * 配置服务代理，用于处理跨域等问题
+   * https://cli.vuejs.org/zh/config/#devserver-proxy
+   */
+  devServer: {
+    proxy: {
+      '/boss': {
+        target: 'http://eduboss.lagou.com',
+        changeOrigin: true,
+      },
+      '/front': {
+        target: 'http://edufront.lagou.com',
+        changeOrigin: true,
+      },
+    },
+  },
 }
