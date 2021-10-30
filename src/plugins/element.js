@@ -8,6 +8,12 @@ import {
   Menu,
   MenuItem,
   Submenu,
+  Breadcrumb,
+  BreadcrumbItem,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  Avatar,
 } from 'element-ui'
 
 Vue.use(Button)
@@ -18,3 +24,9 @@ Vue.use(Button)
   .use(Menu)
   .use(MenuItem)
   .use(Submenu)
+  .use(Breadcrumb)
+  .use(BreadcrumbItem)
+  .use(Dropdown)
+  .use(DropdownItem)
+  .use(DropdownMenu)
+  .use(Avatar)

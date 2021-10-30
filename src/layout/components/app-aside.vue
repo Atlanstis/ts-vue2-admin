@@ -1,7 +1,7 @@
 <template>
   <div class="aside">
     <el-menu
-      default-active="1"
+      default-active="/role"
       class="el-menu-vertical-demo"
       background-color="#545c64"
       text-color="#fff"
