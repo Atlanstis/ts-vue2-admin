@@ -29,14 +29,16 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { Form } from 'element-ui'
+import { login } from '@/services/user'
 
 export default Vue.extend({
   name: 'LoginIndex',
   data() {
     return {
       form: {
-        phone: '',
-        password: '',
+        phone: '18201288771',
+        password: '111111',
       },
       rules: {
         phone: [
@@ -62,8 +64,22 @@ export default Vue.extend({
   },
 
   methods: {
-    onSubmit() {
-      console.log('login')
+    async onSubmit() {
+      try {
+        await (this.$refs.form as Form).validate()
+        this.isLoginLoading = true
+        const { data } = await login(this.form)
+        if (data.state !== 1) {
+          this.$message.error(data.message)
+        } else {
+          this.$store.commit('setUser', data.content)
+          this.$router.push((this.$route.query.redirect as string) || '/')
+          this.$message.success('登录成功')
+        }
+      } catch (err) {
+        console.log('登录失败', err)
+      }
+      this.isLoginLoading = false
     },
   },
 })

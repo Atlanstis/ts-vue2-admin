@@ -10,13 +10,15 @@
         <el-avatar
           :size="30"
           shape="square"
-          :src="'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png'"
+          :src="userInfo.portrait || require('@/assets/avator-default.png')"
         ></el-avatar>
         <i class="el-icon-arrow-down el-icon--right"></i>
       </span>
       <el-dropdown-menu slot="dropdown">
-        <el-dropdown-item>用户 ID</el-dropdown-item>
-        <el-dropdown-item divided>退出</el-dropdown-item>
+        <el-dropdown-item>{{ userInfo.userName }}</el-dropdown-item>
+        <el-dropdown-item divided @click.native="logoutHandle">
+          退出
+        </el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
   </div>
@@ -24,7 +26,47 @@
 
 <script lang="ts">
 import Vue from 'vue'
-export default Vue.extend({})
+import { getUserInfo } from '@/services/user'
+
+export default Vue.extend({
+  name: 'AppHeader',
+
+  data() {
+    return {
+      userInfo: {},
+    }
+  },
+
+  mounted() {
+    this.loadUserInfo()
+  },
+
+  methods: {
+    async loadUserInfo() {
+      const { data } = await getUserInfo()
+      this.userInfo = data.content
+    },
+
+    logoutHandle() {
+      this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning',
+      })
+        .then(() => {
+          this.$store.commit('setUser', null)
+          this.$router.push({
+            name: 'login',
+          })
+          this.$message({
+            type: 'success',
+            message: '退出成功!',
+          })
+        })
+        .catch()
+    },
+  },
+})
 </script>
 
 <style lang="scss" scoped>
