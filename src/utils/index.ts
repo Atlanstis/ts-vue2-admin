@@ -1,7 +1,5 @@
 // 格式化字符串为 JSON 格式
-export const parseJson = (
-  str: string | null
-): null | Record<string, unknown> => {
+export const parseJson = (str: string | null) => {
   if (!str) return null
   let obj = null
   try {
