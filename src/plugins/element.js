@@ -19,6 +19,14 @@ import {
   Input,
   Message,
   MessageBox,
+  Card,
+  Table,
+  TableColumn,
+  Select,
+  Option,
+  Radio,
+  RadioGroup,
+  InputNumber,
 } from 'element-ui'
 
 Vue.use(Button)
@@ -38,6 +46,14 @@ Vue.use(Button)
   .use(Form)
   .use(FormItem)
   .use(Input)
+  .use(Card)
+  .use(Table)
+  .use(TableColumn)
+  .use(Select)
+  .use(Option)
+  .use(Radio)
+  .use(RadioGroup)
+  .use(InputNumber)
 
 Vue.prototype.$message = Message
 Vue.prototype.$confirm = MessageBox.confirm

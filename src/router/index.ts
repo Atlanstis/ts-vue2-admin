@@ -15,24 +15,21 @@ const routes: Array<RouteConfig> = [
   {
     path: '/',
     component: Layout,
+    meta: {
+      requiresAuth: true,
+    },
     children: [
       {
         path: '',
         name: 'home',
         component: () =>
           import(/* webpackChunkName: 'home'  */ '@/views/home/index.vue'),
-        meta: {
-          requiresAuth: true,
-        },
       },
       {
         path: '/advert',
         name: 'advert',
         component: () =>
           import(/* webpackChunkName: 'advert'  */ '@/views/advert/index.vue'),
-        meta: {
-          requiresAuth: true,
-        },
       },
       {
         path: '/advert-space',
@@ -41,27 +38,34 @@ const routes: Array<RouteConfig> = [
           import(
             /* webpackChunkName: 'home'  */ '@/views/advert-space/index.vue'
           ),
-        meta: {
-          requiresAuth: true,
-        },
       },
       {
         path: '/course',
         name: 'course',
         component: () =>
           import(/* webpackChunkName: 'course'  */ '@/views/course/index.vue'),
-        meta: {
-          requiresAuth: true,
-        },
       },
       {
         path: '/menu',
         name: 'menu',
         component: () =>
           import(/* webpackChunkName: 'menu'  */ '@/views/menu/index.vue'),
-        meta: {
-          requiresAuth: true,
-        },
+      },
+      {
+        path: '/menu-create',
+        name: 'menuCreate',
+        component: () =>
+          import(
+            /* webpackChunkName: 'menu-create-oroedit'  */ '@/views/menu/create.vue'
+          ),
+      },
+      {
+        path: '/menu-edit',
+        name: 'menuEdit',
+        component: () =>
+          import(
+            /* webpackChunkName: 'menu-create-oroedit'  */ '@/views/menu/edit.vue'
+          ),
       },
       {
         path: '/resourse',
@@ -70,27 +74,18 @@ const routes: Array<RouteConfig> = [
           import(
             /* webpackChunkName: 'resourse'  */ '@/views/resourse/index.vue'
           ),
-        meta: {
-          requiresAuth: true,
-        },
       },
       {
         path: '/role',
         name: 'role',
         component: () =>
           import(/* webpackChunkName: 'role'  */ '@/views/role/index.vue'),
-        meta: {
-          requiresAuth: true,
-        },
       },
       {
         path: '/user',
         name: 'user',
         component: () =>
           import(/* webpackChunkName: 'user'  */ '@/views/user/index.vue'),
-        meta: {
-          requiresAuth: true,
-        },
       },
     ],
   },

@@ -1,7 +1,7 @@
 <template>
   <div class="aside">
     <el-menu
-      default-active="/role"
+      :default-active="activeMenu"
       class="el-menu-vertical-demo"
       background-color="#545c64"
       text-color="#fff"
@@ -56,6 +56,12 @@
 import Vue from 'vue'
 export default Vue.extend({
   name: 'AppAside',
+
+  computed: {
+    activeMenu() {
+      return this.$route.fullPath
+    },
+  },
 })
 </script>
 
