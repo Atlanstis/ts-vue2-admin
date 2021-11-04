@@ -76,6 +76,8 @@ export default Vue.extend({
         if (data.code === '000000') {
           this.$message.success('删除成功')
           this.loadAllMenus() // 更新数据列表
+        } else {
+          this.$message.error(data.mesg)
         }
       })
     },
