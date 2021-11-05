@@ -39,6 +39,14 @@ import { Vue, Component, Prop, ModelSync } from 'vue-property-decorator'
 import { resourceSaveOrUpdate } from '@/services/resource'
 import { Form } from 'element-ui'
 
+const DEFAULT_FORM = {
+  id: undefined,
+  name: '',
+  categoryId: undefined,
+  url: '',
+  description: '',
+}
+
 @Component
 export default class ResourceDialog extends Vue {
   @ModelSync('visible', 'change', { type: Boolean })
@@ -49,11 +57,7 @@ export default class ResourceDialog extends Vue {
   @Prop({ default: () => ({}) }) readonly editVal!: any
 
   form = {
-    id: undefined,
-    name: '',
-    categoryId: undefined,
-    url: '',
-    description: '',
+    ...DEFAULT_FORM,
   }
 
   rules = {
@@ -100,6 +104,7 @@ export default class ResourceDialog extends Vue {
   }
 
   closeDialog(): void {
+    this.form = { ...DEFAULT_FORM }
     ;(this.$refs.form as Form).resetFields()
     this.dialogVisible = false
   }
