@@ -32,6 +32,7 @@ import {
   Row,
   Col,
   Dialog,
+  Tree,
 } from 'element-ui'
 
 Vue.use(Button)
@@ -64,6 +65,7 @@ Vue.use(Button)
   .use(Row)
   .use(Col)
   .use(Dialog)
+  .use(Tree)
 
 Vue.prototype.$message = Message
 Vue.prototype.$confirm = MessageBox.confirm
