@@ -33,6 +33,8 @@ import {
   Col,
   Dialog,
   Tree,
+  DatePicker,
+  Switch,
 } from 'element-ui'
 
 Vue.use(Button)
@@ -66,6 +68,8 @@ Vue.use(Button)
   .use(Col)
   .use(Dialog)
   .use(Tree)
+  .use(DatePicker)
+  .use(Switch)
 
 Vue.prototype.$message = Message
 Vue.prototype.$confirm = MessageBox.confirm
