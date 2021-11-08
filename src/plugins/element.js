@@ -35,6 +35,10 @@ import {
   Tree,
   DatePicker,
   Switch,
+  Steps,
+  Step,
+  Upload,
+  Progress,
 } from 'element-ui'
 
 Vue.use(Button)
@@ -70,6 +74,10 @@ Vue.use(Button)
   .use(Tree)
   .use(DatePicker)
   .use(Switch)
+  .use(Steps)
+  .use(Step)
+  .use(Upload)
+  .use(Progress)
 
 Vue.prototype.$message = Message
 Vue.prototype.$confirm = MessageBox.confirm
