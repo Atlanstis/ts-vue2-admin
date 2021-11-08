@@ -124,7 +124,7 @@ export default Vue.extend({
 
     goCourseSection(row: any) {
       this.$router.push({
-        name: 'course-section',
+        name: 'courseSection',
         params: {
           courseId: row.id,
         },
